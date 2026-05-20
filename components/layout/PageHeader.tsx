@@ -8,7 +8,7 @@ type Props = {
 
 export function PageHeader({ title, description, kicker }: Props) {
   return (
-    <header className="mb-6 md:mb-[var(--spacing-section)]">
+    <header className="mb-6 hidden lg:block md:mb-[var(--spacing-section)]">
       {kicker ? (
         <p className="font-label-mono mb-3 text-mint">{kicker}</p>
       ) : (

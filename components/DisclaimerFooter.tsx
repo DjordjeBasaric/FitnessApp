@@ -1,6 +1,5 @@
 "use client";
 
-import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { useLocale } from "@/lib/i18n/LocaleContext";
 import { cn } from "@/lib/utils";
 
@@ -17,12 +16,11 @@ export function DisclaimerFooter({
     return (
       <footer
         className={cn(
-          "border-t border-hairline-soft bg-surface px-4 py-3 pb-[calc(4.5rem+env(safe-area-inset-bottom))]",
-          "font-caption-sm leading-relaxed text-mute space-y-3",
+          "border-t border-hairline-soft bg-surface px-4 py-2 pb-[calc(3.75rem+env(safe-area-inset-bottom))]",
+          "font-caption-sm leading-relaxed text-mute",
           className,
         )}
       >
-        <LanguageSwitcher />
         <p>{t("disclaimer.mobile")}</p>
       </footer>
     );
