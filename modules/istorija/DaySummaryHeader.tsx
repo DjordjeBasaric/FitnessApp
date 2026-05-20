@@ -38,11 +38,11 @@ export function DaySummaryHeader({ log, budgetKcal, weightGoal, weights }: Props
   const hasTraining = trainingBurn > 0;
 
   return (
-    <header className="verge-card rounded-[var(--rounded-md)] p-6">
+    <header className="verge-card rounded-[var(--rounded-md)] p-4 lg:p-6">
       <p className="font-caption-sm text-mint">Izabrani dan</p>
-      <h2 className="mt-2 font-heading-lg capitalize text-ink">{formatLongDate(log.date)}</h2>
+      <h2 className="mt-1.5 font-heading-lg capitalize text-ink lg:mt-2">{formatLongDate(log.date)}</h2>
 
-      <div className="mt-6 grid gap-6 sm:grid-cols-3">
+      <div className="mt-4 grid gap-4 sm:grid-cols-3 lg:mt-6 lg:gap-6">
         <div>
           <p className="font-heading-xl tabular-nums text-ink">
             {hasFood ? Math.round(totals.kcal) : "—"}
@@ -85,7 +85,7 @@ export function DaySummaryHeader({ log, budgetKcal, weightGoal, weights }: Props
             ) : null}
           </div>
         ) : (
-          <p className="text-base text-mute sm:col-span-2">
+          <p className="text-sm text-mute sm:col-span-2 lg:text-base">
             {hasTraining && !hasFood
               ? "Samo trening — dodaj hranu u Unosu."
               : !hasFood

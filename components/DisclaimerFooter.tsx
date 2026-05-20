@@ -16,8 +16,8 @@ export function DisclaimerFooter({
     return (
       <footer
         className={cn(
-          "border-t border-hairline-soft bg-surface px-4 py-2 pb-[calc(3.75rem+env(safe-area-inset-bottom))]",
-          "font-caption-sm leading-relaxed text-mute",
+          "border-t border-hairline-soft bg-surface px-3 py-1.5 pb-[calc(3.25rem+env(safe-area-inset-bottom))]",
+          "text-[10px] leading-relaxed text-mute lg:text-xs",
           className,
         )}
       >

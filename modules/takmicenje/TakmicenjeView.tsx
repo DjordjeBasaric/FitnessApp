@@ -7,7 +7,7 @@ import { PersonalDashboard } from "./PersonalDashboard";
 
 export function TakmicenjeView() {
   return (
-    <div className="space-y-8 lg:space-y-12">
+    <div className="space-y-5 lg:space-y-12">
       <PageHeader
         title="Takmičenje"
         kicker="Bodovi i strikovi"

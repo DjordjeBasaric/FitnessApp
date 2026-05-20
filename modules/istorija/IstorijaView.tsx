@@ -57,7 +57,7 @@ function IstorijaMainTabs({
           aria-selected={value === tab}
           onClick={() => onChange(tab)}
           className={cn(
-            "min-h-9 rounded-[var(--rounded-md)] px-4 font-label-mono text-[13px] transition-colors duration-200 sm:min-h-10 sm:px-5",
+            "min-h-8 rounded-[var(--rounded-md)] px-3 font-label-mono text-[11px] transition-colors duration-200 lg:min-h-10 lg:px-5 lg:text-[13px]",
             value === tab
               ? "bg-mint text-on-primary shadow-sm"
               : "text-charcoal hover:bg-surface hover:text-link-hover",
@@ -139,7 +139,7 @@ function DayDetail({
   }
 
   return (
-    <div className="w-full space-y-8">
+    <div className="w-full space-y-5 lg:space-y-8">
       <DaySummaryHeader
         log={active}
         budgetKcal={budgetKcal}
@@ -151,7 +151,7 @@ function DayDetail({
         <DayCardioList cardio={active.cardioSessions} />
         <DayStrengthList blocks={active.strengthBlocks} />
       </div>
-      <div className="flex flex-wrap justify-end gap-3 border-t border-hairline pt-8">
+      <div className="flex flex-wrap justify-end gap-2 border-t border-hairline pt-5 lg:gap-3 lg:pt-8">
         <Button type="button" variant="outline" onClick={() => setEditing(true)}>
           {t("history.editDay")}
         </Button>

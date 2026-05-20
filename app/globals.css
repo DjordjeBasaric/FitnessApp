@@ -203,6 +203,21 @@ html {
     text-transform: uppercase;
   }
 
+  .font-display-xl {
+    font-family: var(--font-verge-display), Impact, sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.02em;
+  }
+
+  .font-display-sm {
+    font-family: var(--font-verge-display), Impact, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
   .verge-card {
     border-radius: var(--rounded-md);
     border: 1px solid var(--hairline);
@@ -254,9 +269,69 @@ html {
   }
 }
 
+@media (max-width: 1023px) {
+  html {
+    font-size: 16px;
+  }
+
+  .font-display-hero {
+    font-size: clamp(2rem, 10vw, 2.75rem);
+  }
+
+  .font-heading-xl {
+    font-size: 1.375rem;
+    line-height: 1.1;
+  }
+
+  .font-heading-lg {
+    font-size: 1.125rem;
+    line-height: 1.15;
+  }
+
+  .font-heading-md {
+    font-size: 1rem;
+  }
+
+  .font-whisper {
+    font-size: 0.8125rem;
+    letter-spacing: 0.08em;
+  }
+
+  .font-body-md,
+  .font-body-strong {
+    font-size: 0.9375rem;
+  }
+
+  .font-caption-md {
+    font-size: 0.6875rem;
+  }
+
+  .font-caption-sm {
+    font-size: 0.625rem;
+    letter-spacing: 0.08em;
+  }
+
+  .font-label-mono {
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+  }
+
+  .font-display-xl {
+    font-size: 1.5rem;
+  }
+
+  .font-display-sm {
+    font-size: 1rem;
+  }
+
+  .font-button-md {
+    font-size: 0.8125rem;
+  }
+}
+
 @media (max-width: 639px) {
   .font-display-hero {
-    font-size: clamp(3rem, 12vw, 4rem);
+    font-size: clamp(1.75rem, 9vw, 2.25rem);
   }
 }
 

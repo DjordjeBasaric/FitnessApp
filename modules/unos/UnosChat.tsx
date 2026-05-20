@@ -193,8 +193,8 @@ export function UnosChat({ logs, weights, refresh, weightGoal }: Props) {
   }
 
   return (
-    <div className="flex h-[calc(100dvh-8rem)] min-h-[420px] flex-col lg:-mx-4 lg:h-[calc(100dvh-6rem)] xl:-mx-8">
-      <div className="mb-2 shrink-0">
+    <div className="flex h-[calc(100dvh-3.5rem)] min-h-[360px] flex-col lg:-mx-4 lg:h-[calc(100dvh-6rem)] lg:min-h-[420px] xl:-mx-8">
+      <div className="mb-1 shrink-0 lg:mb-2">
         <DateStripCarousel
           rows={stripRows}
           activeDate={selectedDate}
@@ -203,9 +203,9 @@ export function UnosChat({ logs, weights, refresh, weightGoal }: Props) {
       </div>
 
       <div ref={scrollRef} className="flex-1 overflow-y-auto px-1">
-        <div className="mx-auto flex max-w-2xl flex-col gap-6 py-4 lg:max-w-3xl">
+        <div className="mx-auto flex max-w-2xl flex-col gap-4 py-2 lg:max-w-3xl lg:gap-6 lg:py-4">
           {!hasMessages ? (
-            <div className="flex flex-1 flex-col items-center justify-center px-4 py-8">
+            <div className="flex flex-1 flex-col items-center justify-center px-2 py-4 lg:px-4 lg:py-8">
               <DayIntakeSummary
                 log={dailyForSelected}
                 budgetKcal={budgetKcal}
@@ -219,10 +219,10 @@ export function UnosChat({ logs, weights, refresh, weightGoal }: Props) {
               <div
                 key={i}
                 className={cn(
-                  "text-[17px] leading-relaxed",
+                  "text-sm leading-relaxed lg:text-[17px]",
                   m.role === "user"
-                    ? "ml-auto max-w-[85%] whitespace-pre-wrap rounded-[var(--rounded-lg)] bg-mint px-4 py-3 text-[1.0625rem] font-medium text-on-primary"
-                    : "mr-auto max-w-[90%] whitespace-pre-wrap text-base text-charcoal",
+                    ? "ml-auto max-w-[85%] whitespace-pre-wrap rounded-[var(--rounded-md)] bg-mint px-3 py-2 text-sm font-medium text-on-primary lg:rounded-[var(--rounded-lg)] lg:px-4 lg:py-3 lg:text-[1.0625rem]"
+                    : "mr-auto max-w-[90%] whitespace-pre-wrap text-sm text-charcoal lg:text-base",
                 )}
               >
                 {m.text}
@@ -233,9 +233,9 @@ export function UnosChat({ logs, weights, refresh, weightGoal }: Props) {
         </div>
       </div>
 
-      <div className="shrink-0 bg-canvas pt-3 pb-1 lg:pb-3">
+      <div className="shrink-0 bg-canvas pt-2 pb-1 lg:pt-3 lg:pb-3">
         <div className="mx-auto w-full max-w-2xl lg:max-w-3xl">
-          <div className="flex items-end gap-2 rounded-[var(--rounded-lg)] border border-hairline bg-surface px-2 py-2 focus-within:border-mint focus-within:ring-1 focus-within:ring-purple">
+          <div className="flex items-end gap-1.5 rounded-[var(--rounded-md)] border border-hairline bg-surface px-1.5 py-1.5 focus-within:border-mint focus-within:ring-1 focus-within:ring-purple lg:gap-2 lg:rounded-[var(--rounded-lg)] lg:px-2 lg:py-2">
             <textarea
               ref={inputRef}
               rows={1}
@@ -244,7 +244,7 @@ export function UnosChat({ logs, weights, refresh, weightGoal }: Props) {
               disabled={parseBusy}
               onChange={(e) => setChatInput(e.target.value)}
               onKeyDown={onComposerKeyDown}
-              className="max-h-40 min-h-[44px] flex-1 resize-none border-0 bg-transparent px-3 py-2.5 text-[1.1875rem] leading-relaxed text-ink placeholder:text-mute focus:outline-none focus:ring-0"
+              className="max-h-32 min-h-[36px] flex-1 resize-none border-0 bg-transparent px-2 py-2 text-sm leading-snug text-ink placeholder:text-mute focus:outline-none focus:ring-0 lg:max-h-40 lg:min-h-[44px] lg:px-3 lg:py-2.5 lg:text-[1.1875rem] lg:leading-relaxed"
               style={{ fieldSizing: "content" } as React.CSSProperties}
             />
             <button
@@ -253,13 +253,13 @@ export function UnosChat({ logs, weights, refresh, weightGoal }: Props) {
               aria-label={t("unos.sendAria")}
               onClick={() => void submitParse()}
               className={cn(
-                "mb-0.5 flex size-11 shrink-0 items-center justify-center rounded-full bg-mint",
+                "mb-0.5 flex size-9 shrink-0 items-center justify-center rounded-full bg-mint lg:size-11",
                 "transition-[opacity,filter] enabled:hover:brightness-110",
                 "disabled:cursor-not-allowed disabled:opacity-40",
               )}
             >
               <Send
-                className="size-[22px] shrink-0 stroke-black text-black"
+                className="size-[18px] shrink-0 stroke-black text-black lg:size-[22px]"
                 strokeWidth={2.25}
                 aria-hidden
               />

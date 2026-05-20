@@ -25,7 +25,7 @@ function MealHeader({
   return (
     <div
       className={cn(
-        "mb-4 flex flex-col gap-2 rounded-[var(--rounded-md)] px-3 py-3 sm:px-4",
+        "mb-3 flex flex-col gap-1.5 rounded-[var(--rounded-md)] px-2.5 py-2 lg:mb-4 lg:gap-2 lg:px-4 lg:py-3",
         hasItems
           ? "verge-tile-mint"
           : "border border-hairline-soft bg-surface",
@@ -41,14 +41,14 @@ function MealHeader({
       </p>
       <p
         className={cn(
-          "text-xl font-semibold tabular-nums",
+          "text-base font-semibold tabular-nums lg:text-xl",
           hasItems ? "text-on-primary" : "text-mute",
         )}
       >
         {hasItems ? Math.round(totals.kcal) : "-"}
         <span
           className={cn(
-            "text-base font-normal",
+            "text-xs font-normal lg:text-base",
             hasItems ? "text-on-primary/75" : "text-mute",
           )}
         >
@@ -58,7 +58,7 @@ function MealHeader({
       </p>
       <p
         className={cn(
-          "text-sm tabular-nums",
+          "text-xs tabular-nums lg:text-sm",
           hasItems ? "text-on-primary/90" : "text-mute",
         )}
       >
@@ -99,8 +99,8 @@ function MealColumn({
               key={r.id}
               className="border-b border-hairline-soft pb-3 last:border-b-0 last:pb-0"
             >
-              <p className="text-[15px] leading-snug text-charcoal">{r.description}</p>
-              <p className="mt-1.5 tabular-nums text-sm text-mute">
+              <p className="text-[13px] leading-snug text-charcoal lg:text-[15px]">{r.description}</p>
+              <p className="mt-1 tabular-nums text-xs text-mute lg:mt-1.5 lg:text-sm">
                 {Math.round(r.kcal)} · P {Math.round(r.proteinG)} · UH{" "}
                 {Math.round(r.carbsG)} · M {Math.round(r.fatG)}
               </p>
@@ -127,11 +127,11 @@ export function DayFoodByMeals({ rows }: { rows: DailyLog["foodItems"] }) {
 
   return (
     <Card className="w-full">
-      <CardHeader className="py-5">
-        <CardTitle className="text-lg">{t("history.foodByMeals")}</CardTitle>
+      <CardHeader className="py-3 lg:py-5">
+        <CardTitle className="text-sm lg:text-lg">{t("history.foodByMeals")}</CardTitle>
       </CardHeader>
-      <CardContent className="pb-6">
-        <div className="grid grid-cols-1 gap-8 min-[480px]:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+      <CardContent className="pb-4 lg:pb-6">
+        <div className="grid grid-cols-1 gap-5 min-[480px]:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {MEAL_SLOTS.map((slot) => (
             <MealColumn key={slot} slot={slot} group={bySlot[slot]} />
           ))}

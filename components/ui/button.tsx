@@ -15,11 +15,11 @@ const variants = cva(
     variants: {
       variant: {
         default:
-          "rounded-[var(--rounded-lg)] bg-mint px-6 py-2.5 text-on-primary min-h-11 hover:bg-white/20 hover:text-on-primary hover:shadow-[0_0_0_1px_#c2c2c2]",
+          "rounded-[var(--rounded-lg)] bg-mint px-4 py-2 text-on-primary min-h-9 lg:px-6 lg:py-2.5 lg:min-h-11 hover:bg-white/20 hover:text-on-primary hover:shadow-[0_0_0_1px_#c2c2c2]",
         secondary:
-          "rounded-[var(--rounded-lg)] bg-surface px-6 py-2.5 text-charcoal min-h-11 hover:bg-white/20 hover:text-on-primary hover:shadow-[0_0_0_1px_#c2c2c2]",
+          "rounded-[var(--rounded-lg)] bg-surface px-4 py-2 text-charcoal min-h-9 lg:px-6 lg:py-2.5 lg:min-h-11 hover:bg-white/20 hover:text-on-primary hover:shadow-[0_0_0_1px_#c2c2c2]",
         outline:
-          "rounded-[var(--rounded-pill)] border border-mint bg-transparent px-5 py-2.5 text-mint min-h-11 hover:bg-mint hover:text-on-primary",
+          "rounded-[var(--rounded-pill)] border border-mint bg-transparent px-4 py-2 text-mint min-h-9 lg:px-5 lg:py-2.5 lg:min-h-11 hover:bg-mint hover:text-on-primary",
         ghost:
           "rounded-[var(--rounded-full)] border border-hairline-soft bg-surface text-ink min-h-10 min-w-10 p-0 hover:text-link-hover",
         "on-image":

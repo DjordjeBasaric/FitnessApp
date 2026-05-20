@@ -9,7 +9,7 @@ import { UsernameSetup } from "./UsernameSetup";
 
 export function PrijateljiView() {
   return (
-    <div className="space-y-8 lg:space-y-12">
+    <div className="space-y-6 lg:space-y-8">
       <PageHeader
         title="Prijatelji"
         kicker="Takmičenje"

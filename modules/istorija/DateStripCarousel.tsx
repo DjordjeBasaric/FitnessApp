@@ -75,13 +75,13 @@ export function DateStripCarousel({ rows, activeDate, onSelect, onSpinDirection 
   return (
     <div
       ref={viewportRef}
-      className="date-strip-viewport mx-auto w-full max-w-5xl px-2 py-3"
+      className="date-strip-viewport mx-auto w-full max-w-5xl px-1 py-1.5 lg:px-2 lg:py-3"
       role="list"
       aria-label={t("history.dayPicker")}
     >
       <div
         ref={trackRef}
-        className="date-strip-track flex items-end gap-3 sm:gap-4"
+        className="date-strip-track flex items-end gap-2 lg:gap-4"
         style={{ transform: `translate3d(${translateX}px, 0, 0)` }}
       >
         {rows.map((log, i) => {
@@ -106,8 +106,8 @@ export function DateStripCarousel({ rows, activeDate, onSelect, onSpinDirection 
               aria-label={formatShortDate(log.date)}
               onClick={() => onSelect(log.date)}
               className={cn(
-                "date-strip-item flex shrink-0 flex-col items-center justify-center gap-1 rounded-[var(--rounded-lg)] border px-3 py-3 sm:px-4",
-                "min-h-[5.25rem] min-w-[5rem] sm:min-h-[6rem] sm:min-w-[5.75rem]",
+                "date-strip-item flex shrink-0 flex-col items-center justify-center gap-0.5 rounded-[var(--rounded-md)] border px-2 py-2 lg:gap-1 lg:rounded-[var(--rounded-lg)] lg:px-4 lg:py-3",
+                "min-h-[3.75rem] min-w-[3.75rem] lg:min-h-[6rem] lg:min-w-[5.75rem]",
                 isSel
                   ? "date-strip-item--active border-mint bg-mint text-on-primary"
                   : "border-hairline bg-surface text-ink hover:border-mint-border",
@@ -118,11 +118,11 @@ export function DateStripCarousel({ rows, activeDate, onSelect, onSpinDirection 
                 zIndex: 20 - abs,
               }}
             >
-              <span className="font-label-mono text-[11px] tracking-wide sm:text-xs">{dow}</span>
-              <span className="text-2xl font-semibold tabular-nums leading-none sm:text-3xl">{dom}</span>
+              <span className="font-label-mono text-[9px] tracking-wide lg:text-xs">{dow}</span>
+              <span className="text-lg font-semibold tabular-nums leading-none lg:text-3xl">{dom}</span>
               <span
                 className={cn(
-                  "text-[11px] capitalize sm:text-xs",
+                  "text-[9px] capitalize lg:text-xs",
                   isSel ? "text-on-primary/75" : "text-mute",
                 )}
               >
@@ -131,14 +131,14 @@ export function DateStripCarousel({ rows, activeDate, onSelect, onSpinDirection 
               {kcal != null ? (
                 <span
                   className={cn(
-                    "mt-0.5 text-sm font-medium tabular-nums sm:text-base",
+                    "mt-0.5 text-[11px] font-medium tabular-nums lg:text-base",
                     isSel ? "text-on-primary/90" : "text-mint",
                   )}
                 >
                   {kcal}
                 </span>
               ) : (
-                <span className={cn("mt-0.5 text-xs", isSel ? "text-on-primary/60" : "text-stone")}>
+                <span className={cn("mt-0.5 text-[10px] lg:text-xs", isSel ? "text-on-primary/60" : "text-stone")}>
                   —
                 </span>
               )}

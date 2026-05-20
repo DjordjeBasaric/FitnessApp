@@ -19,7 +19,7 @@ export function MobileShell({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="flex min-h-[100dvh] flex-col bg-canvas text-ink lg:hidden">
-      <main className="flex-1 overflow-y-auto px-4 py-4 pt-[calc(1rem+env(safe-area-inset-top))] pb-[calc(4.5rem+env(safe-area-inset-bottom))]">
+      <main className="flex-1 overflow-y-auto px-3 py-2 pt-[calc(0.5rem+env(safe-area-inset-top))] pb-[calc(4rem+env(safe-area-inset-bottom))]">
         {children}
       </main>
 
@@ -31,7 +31,7 @@ export function MobileShell({ children }: { children: React.ReactNode }) {
         aria-label="Navigacija"
       >
         <div
-          className="grid h-14"
+          className="grid h-12"
           style={{ gridTemplateColumns: `repeat(${navItems.length}, minmax(0, 1fr))` }}
         >
           {navItems.map(({ href, shortLabel, Icon }) => {
@@ -48,7 +48,7 @@ export function MobileShell({ children }: { children: React.ReactNode }) {
                   active ? "text-mint nav-active-inset" : "text-mute hover:text-link-hover",
                 )}
               >
-                <Icon className="size-6 stroke-[1.5]" aria-hidden />
+                <Icon className="size-5 stroke-[1.5]" aria-hidden />
               </Link>
             );
           })}

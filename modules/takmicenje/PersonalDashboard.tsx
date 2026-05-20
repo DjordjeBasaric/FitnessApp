@@ -64,11 +64,11 @@ export function PersonalDashboard() {
   const trend = trendPoints;
 
   return (
-    <div className="space-y-6">
-      <div className="grid gap-4 sm:grid-cols-3">
+    <div className="space-y-4 lg:space-y-6">
+      <div className="grid gap-3 sm:grid-cols-3 lg:gap-4">
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="flex items-center gap-2 text-base">
+            <CardTitle className="flex items-center gap-2 text-sm lg:text-base">
               <Flame className="size-5 text-mint" aria-hidden />
               Strik
             </CardTitle>
@@ -82,7 +82,7 @@ export function PersonalDashboard() {
 
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="flex items-center gap-2 text-base">
+            <CardTitle className="flex items-center gap-2 text-sm lg:text-base">
               <Target className="size-5 text-mint" aria-hidden />
               Preciznost danas
             </CardTitle>
@@ -105,7 +105,7 @@ export function PersonalDashboard() {
 
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="flex items-center gap-2 text-base">
+            <CardTitle className="flex items-center gap-2 text-sm lg:text-base">
               <Trophy className="size-5 text-mint" aria-hidden />
               Današnji ukupno
             </CardTitle>
@@ -162,7 +162,7 @@ export function PersonalDashboard() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="h-64">
+          <div className="h-48 lg:h-64">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={trend}>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.08)" />

@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
 
 function MacroLine({ label, consumed }: { label: string; consumed: number }) {
   return (
-    <div className="flex items-center justify-between gap-4 text-base">
+    <div className="flex items-center justify-between gap-4 text-sm lg:text-base">
       <span className="font-label-mono text-mute">{label}</span>
       <span className="tabular-nums text-ink">{Math.round(consumed)}</span>
     </div>
@@ -58,17 +58,17 @@ export function DayIntakeSummary({
   const hasTraining = trainingBurn > 0;
 
   return (
-    <div className="w-full max-w-lg space-y-6 text-left">
+    <div className="w-full max-w-lg space-y-4 text-left lg:space-y-6">
       <div className="text-center">
         <p className="font-whisper text-charcoal">{t("intake.title")}</p>
-        <p className="mt-2 font-heading-xl text-ink">{t("intake.headline")}</p>
-        <p className="mt-3 text-base text-mute">{t("intake.hint")}</p>
+        <p className="mt-1.5 font-heading-xl text-ink lg:mt-2">{t("intake.headline")}</p>
+        <p className="mt-2 text-sm text-mute lg:mt-3 lg:text-base">{t("intake.hint")}</p>
       </div>
 
-      <div className="verge-card rounded-[var(--rounded-md)] border border-hairline bg-canvas p-6">
+      <div className="verge-card rounded-[var(--rounded-md)] border border-hairline bg-canvas p-4 lg:p-6">
         <p className="font-caption-sm text-mint">{t("intake.todayAggregate")}</p>
 
-        <div className="mt-5 grid gap-4 sm:grid-cols-2">
+        <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:mt-5 lg:gap-4">
           <div>
             <p className="font-heading-xl tabular-nums text-ink">{Math.round(consumedKcal)}</p>
             <p className="font-caption-sm mt-1 text-mute">{t("intake.foodKcal")}</p>
@@ -83,7 +83,7 @@ export function DayIntakeSummary({
 
         {allowance != null && baseLimit != null ? (
           <>
-            <div className="mt-5 space-y-2 border-t border-hairline-soft pt-5 text-sm">
+            <div className="mt-3 space-y-1.5 border-t border-hairline-soft pt-3 text-xs lg:mt-5 lg:space-y-2 lg:pt-5 lg:text-sm">
               <div className="flex justify-between tabular-nums">
                 <span className="text-mute">{t("intake.baseLimit")}</span>
                 <span className="text-ink">{Math.round(baseLimit)} kcal</span>
@@ -103,7 +103,7 @@ export function DayIntakeSummary({
             {remainingKcal != null ? (
               <p
                 className={cn(
-                  "mt-4 text-center text-xl font-bold tabular-nums",
+                  "mt-3 text-center text-base font-bold tabular-nums lg:mt-4 lg:text-xl",
                   remainingKcal > 0 ? "text-mint" : remainingKcal === 0 ? "text-mint" : "text-purple",
                 )}
               >
@@ -128,13 +128,13 @@ export function DayIntakeSummary({
             ) : null}
           </>
         ) : (
-          <p className="mt-4 text-base text-mute">
+          <p className="mt-3 text-sm text-mute lg:mt-4 lg:text-base">
             {hasAnyFood ? t("intake.noGoal") : t("intake.noEntries")}
           </p>
         )}
 
         {hasAnyFood && totals ? (
-          <div className="mt-6 space-y-3 border-t border-hairline-soft pt-5">
+          <div className="mt-4 space-y-2 border-t border-hairline-soft pt-4 lg:mt-6 lg:space-y-3 lg:pt-5">
             <MacroLine label={t("intake.protein")} consumed={totals.proteinG} />
             <MacroLine label={t("intake.carbs")} consumed={totals.carbsG} />
             <MacroLine label={t("intake.fat")} consumed={totals.fatG} />
@@ -142,14 +142,14 @@ export function DayIntakeSummary({
         ) : null}
 
         {mealKcal && hasAnyFood ? (
-          <div className="mt-5 flex flex-wrap gap-2 border-t border-hairline-soft pt-5">
+          <div className="mt-3 flex flex-wrap gap-1.5 border-t border-hairline-soft pt-3 lg:mt-5 lg:gap-2 lg:pt-5">
             {MEAL_SLOTS.map((slot) => {
               const k = mealKcal[slot];
               if (k <= 0) return null;
               return (
                 <span
                   key={slot}
-                  className="rounded-[var(--rounded-md)] border border-mint-border bg-surface px-3 py-1.5 font-caption-sm tabular-nums text-mint"
+                  className="rounded-[var(--rounded-md)] border border-mint-border bg-surface px-2 py-1 font-caption-sm tabular-nums text-mint lg:px-3 lg:py-1.5"
                 >
                   {t(mealLabelKey(slot))} {Math.round(k)}
                 </span>
