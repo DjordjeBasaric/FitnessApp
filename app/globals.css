@@ -1,26 +1,329 @@
 @import "tailwindcss";
 
+/* The Verge–inspired editorial tokens (dark canvas, hazard accents) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
+
+  --canvas: #131313;
+  --surface: #2d2d2d;
+  --surface-image: #313131;
+
+  --ink: #ffffff;
+  --charcoal: #e9e9e9;
+  --ash: #949494;
+  --mute: #949494;
+  --stone: #8c8c8c;
+  --on-primary: #000000;
+  --inverted: #131313;
+
+  --mint: #3cffd0;
+  --mint-border: #309875;
+  --purple: #5200ff;
+  --purple-rule: #3d00bf;
+  --link-hover: #3860be;
+  --focus-ring: #1eaedb;
+
+  --hairline: #ffffff;
+  --hairline-soft: #313131;
+  --hairline-mint: #309875;
+
+  --soft-cloud: var(--surface);
+  --sale: #5200ff;
+  --sale-deep: #3d00bf;
+  --success: #3cffd0;
+  --success-bright: #3cffd0;
+  --info: #3860be;
+
+  --tile-mint: #3cffd0;
+  --tile-purple: rgba(82, 0, 255, 0.9);
+  --tile-yellow: #ffe500;
+  --tile-pink: #ff3d8e;
+  --tile-orange: #ff6b00;
+  --tile-blue: #0066ff;
+
+  --spacing-xxs: 2px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 18px;
+  --spacing-xl: 24px;
+  --spacing-xxl: 32px;
+  --spacing-section: 48px;
+
+  --rounded-xs: 2px;
+  --rounded-sm: 4px;
+  --rounded-md: 20px;
+  --rounded-lg: 24px;
+  --rounded-xl: 30px;
+  --rounded-pill: 40px;
+  --rounded-full: 9999px;
+
+  --max-content: 1280px;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-soft-cloud: var(--surface);
+  --color-ink: var(--ink);
+  --color-charcoal: var(--charcoal);
+  --color-ash: var(--ash);
+  --color-mute: var(--mute);
+  --color-stone: var(--stone);
+  --color-on-primary: var(--on-primary);
+  --color-inverted: var(--inverted);
+  --color-mint: var(--mint);
+  --color-mint-border: var(--mint-border);
+  --color-purple: var(--purple);
+  --color-purple-rule: var(--purple-rule);
+  --color-hairline: var(--hairline);
+  --color-hairline-soft: var(--hairline-soft);
+  --color-hairline-mint: var(--hairline-mint);
+  --color-link-hover: var(--link-hover);
+  --color-focus-ring: var(--focus-ring);
+  --color-sale: var(--sale);
+  --color-sale-deep: var(--sale-deep);
+  --color-success: var(--success);
+  --color-success-bright: var(--success-bright);
+  --color-info: var(--info);
+
+  --font-sans: var(--font-verge-ui), ui-sans-serif, system-ui;
+  --font-display: var(--font-verge-display), Impact, sans-serif;
+  --font-mono: var(--font-verge-mono), ui-monospace;
+
+  --radius-card: var(--rounded-md);
+  --radius-feature: var(--rounded-lg);
+  --radius-button: var(--rounded-lg);
+  --radius-pill: var(--rounded-pill);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.theme-verge {
+  color-scheme: dark;
+}
+
+html {
+  font-size: 20px;
+}
+
+@layer base {
+  body {
+    @apply bg-canvas text-ink;
+  }
+
+  a:not([class]) {
+    @apply text-mint transition-colors duration-150;
+  }
+
+  a:not([class]):hover {
+    color: var(--link-hover);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .font-display-hero {
+    font-family: var(--font-verge-display), Impact, sans-serif;
+    font-size: clamp(3.5rem, 9vw, 7.25rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .font-heading-xl {
+    font-size: 2.375rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  .font-heading-lg {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .font-heading-md {
+    font-size: 1.3125rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .font-body-md {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+
+  .font-body-strong {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .font-button-md {
+    font-family: var(--font-verge-mono), ui-monospace;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 2;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .font-caption-md {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .font-caption-sm {
+    font-family: var(--font-verge-mono), ui-monospace;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+  }
+
+  .font-whisper {
+    font-size: 1.4375rem;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: 0.12em;
+    text-transform: capitalize;
+  }
+
+  .font-label-mono {
+    font-family: var(--font-verge-mono), ui-monospace;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+  }
+
+  .verge-card {
+    border-radius: var(--rounded-md);
+    border: 1px solid var(--hairline);
+    background: var(--canvas);
+  }
+
+  .verge-card-surface {
+    border-radius: var(--rounded-md);
+    border: 1px solid var(--hairline-soft);
+    background: var(--surface);
+  }
+
+  .verge-tile-mint {
+    border-radius: var(--rounded-md);
+    background: var(--mint);
+    color: var(--on-primary);
+  }
+
+  .verge-tile-purple {
+    border-radius: var(--rounded-md);
+    background: var(--tile-purple);
+    color: var(--ink);
+  }
+
+  .nav-active-inset {
+    box-shadow: inset 0 -2px 0 0 var(--mint);
+  }
+
+  .verge-link {
+    transition: color 150ms ease;
+  }
+
+  .verge-link:hover {
+    color: var(--link-hover);
+  }
+
+  .section-gap {
+    margin-bottom: var(--spacing-section);
+  }
+
+  .storystream-rail {
+    border-left: 1px solid var(--purple-rule);
+    padding-left: 1rem;
+  }
+
+  .verge-press:active:not(:disabled) {
+    opacity: 0.5;
+    background-color: rgba(140, 140, 140, 0.87);
+  }
+}
+
+@media (max-width: 639px) {
+  .font-display-hero {
+    font-size: clamp(3rem, 12vw, 4rem);
+  }
+}
+
+.date-strip-viewport {
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.date-strip-track {
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.date-strip-item {
+  transition:
+    transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity 0.32s ease-out,
+    box-shadow 0.35s ease-out,
+    border-color 0.28s ease-out,
+    background-color 0.28s ease-out;
+}
+
+.date-strip-item--active {
+  box-shadow: 0 8px 24px rgba(60, 255, 208, 0.18);
+}
+
+.day-detail-panel {
+  animation: day-detail-enter 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.day-detail-panel[data-spin="-1"] {
+  animation-name: day-detail-enter-back;
+}
+
+@keyframes day-detail-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(10px, 6px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes day-detail-enter-back {
+  from {
+    opacity: 0;
+    transform: translate3d(-10px, 6px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .verge-press:active:not(:disabled) {
+    opacity: 1;
+  }
+
+  .date-strip-track,
+  .date-strip-item {
+    transition-duration: 0.01ms;
+  }
+
+  .day-detail-panel {
+    animation: none;
+  }
 }
